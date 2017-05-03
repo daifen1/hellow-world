@@ -6,6 +6,7 @@ import numpy as np
 from numpy import pi
 '''
 GetLineLength(vertexA, vertexB)    计算两点之间的距离
+
 GetTriangleArea(myTriangle)        计算三角形的面积
 GetLongesSide(triangle)            得到三角形的最长边
 devideTriangle                     按照最长边，分割三角形，返回两个三角形
@@ -28,15 +29,16 @@ class Triangle(object):
         self.vertexC = vertexC
 
 
-def GetTwoPointDistance(vertex1, vertex2):
-    return math.sqrt((vertex1[0] - vertex2[0])**2 + (vertex1[1] - vertex2[1]) + (vertex1[2] - vertex2[2]))
-
-
-def GetLineLength(vertexA, vertexB):
-    sum = (vertexA[0] - vertexB[0]) * (vertexA[0] - vertexB[0]) + (vertexA[1] - vertexB[1]) * \
+def GetTwoPointDistance(vertexA, vertexB):
+    
+    if len(vertexA)==3:
+        sum = (vertexA[0] - vertexB[0]) * (vertexA[0] - vertexB[0]) + (vertexA[1] - vertexB[1]) * \
         (vertexA[1] - vertexB[1]) + (vertexA[2] -
                                      vertexB[2]) * (vertexA[2] - vertexB[2])
-    return math.sqrt(sum)
+        return math.sqrt((vertexA[0] - vertexB[0])**2 + (vertexA[1] - vertexB[1])**2 + (vertexA[2] - vertexB[2])**2)
+    elif len(vertexA)==2:
+        sum=(vertexA[0] - vertexB[0]) **2 + (vertexA[1] - vertexB[1]) **2
+        return math.sqrt(sum)
 # give the Triangle,retuan the Area of triangle
 
 

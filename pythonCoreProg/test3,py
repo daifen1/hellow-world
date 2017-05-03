@@ -1,0 +1,15 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*
+import time
+import functools
+from string import lowercase
+from string import uppercase
+def simpleGen():
+	yield 1
+	yield '2->punch'
+if __name__ == '__main__':
+	str1="this is a test"
+	print str1
+	liststr=str1.split()
+	liststr.reverse()
+	print ''.join(liststr)
